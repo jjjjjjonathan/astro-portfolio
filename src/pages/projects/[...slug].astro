@@ -1,4 +1,5 @@
 ---
+import Project from "../../layouts/Project.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,7 +14,8 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 ---
 
-<article class="prose prose-xl">
-  <h1>{project.data.title} (this is from the getCollection function?)</h1>
-  <Content />
-</article>
+<Project title={project.data.title}>
+  <main>
+    <Content />
+  </main>
+</Project>
