@@ -13,5 +13,7 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 ---
 
-<h1>{project.data.title} (this is from the getCollection function?)</h1>
-<Content />
+<article class="prose prose-xl">
+  <h1>{project.data.title} (this is from the getCollection function?)</h1>
+  <Content />
+</article>
