@@ -14,10 +14,22 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
+const { title, githubUrl, deployUrl } = project.data;
 ---
 
-<Project title={project.data.title}>
+<Project title={title}>
   <main>
     <Content />
+    <button class="rounded-xl bg-emerald-400 p-3">{githubUrl}</button>
+
+    {
+      deployUrl ? (
+        <button class="rounded-xl bg-amber-300 p-3">{deployUrl}</button>
+      ) : (
+        <button disabled="disabled" class="rounded-xl bg-gray-300 p-3">
+          No Live Link
+        </button>
+      )
+    }
   </main>
 </Project>
