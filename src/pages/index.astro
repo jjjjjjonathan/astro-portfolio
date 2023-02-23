@@ -1,9 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects", ({ data }) => !data.draft);
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>hello world</h1>
-  </main>
+<Layout title="jonathan cheng">
+  <ul>
+    {
+      projects.map((project) => (
+        <li>
+          <a href={`/projects/${project.slug}`}>{project.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

@@ -3,9 +3,7 @@ import Project from "../../layouts/Project.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects", ({ data }) => {
-    return !data.draft;
-  });
+  const projects = await getCollection("projects", ({ data }) => !data.draft);
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -17,7 +15,7 @@ const { Content } = await project.render();
 const { title, githubUrl, deployUrl } = project.data;
 ---
 
-<Project title={title}>
+<Project title={`${title} | jonathan cheng`}>
   <main>
     <Content />
     <button class="rounded-xl bg-emerald-400 p-3">{githubUrl}</button>
