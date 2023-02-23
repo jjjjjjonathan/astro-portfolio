@@ -18,13 +18,13 @@ const { title, githubUrl, deployUrl } = project.data;
 <Project title={`${title} | jonathan cheng`}>
   <main>
     <Content />
-    <button class="rounded-xl bg-emerald-400 p-3">{githubUrl}</button>
+    <button class='rounded-xl bg-emerald-400 p-3'>{githubUrl}</button>
 
     {
       deployUrl ? (
-        <button class="rounded-xl bg-amber-300 p-3">{deployUrl}</button>
+        <button class='rounded-xl bg-amber-300 p-3'>{deployUrl}</button>
       ) : (
-        <button disabled="disabled" class="rounded-xl bg-gray-300 p-3">
+        <button disabled='disabled' class='rounded-xl bg-gray-300 p-3'>
           No Live Link
         </button>
       )
