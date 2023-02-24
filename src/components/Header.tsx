@@ -27,11 +27,20 @@ const Header = () => {
         <div className='text-2xl sm:text-3xl'>
           and <span>{secondaryRole}.</span>
         </div>
-        <button className='rounded-full bg-blue-400 p-3' onClick={setNewRole}>
+        <button
+          className='hidden rounded-full bg-blue-400 p-3 sm:block'
+          onClick={setNewRole}
+        >
           What else am I?
         </button>
       </div>
       <div className='h-48 w-48 bg-black'></div>
+      <button
+        className='block rounded-full bg-blue-400 p-3 sm:hidden'
+        onClick={setNewRole}
+      >
+        What else am I?
+      </button>
     </header>
   );
 };
