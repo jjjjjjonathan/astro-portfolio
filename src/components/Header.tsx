@@ -1,18 +1,24 @@
 import { useState } from 'react';
 
 const Header = () => {
-  const [secondaryRole, setSecondaryRole] = useState('a sports writer');
-
   const roles = [
-    'a sports writer',
-    'a former football coach',
-    'a keyboard builder',
+    { title: 'sports writer', photo: '/tiles-g095d99ed0_640.jpg' },
+    {
+      title: 'former football coach',
+      photo: '/tiles-ga931800d8_640.jpg',
+    },
+    { title: 'keyboard builder', photo: '/tiles-g095d99ed0_640.jpg' },
+    { title: 'HK milk tea enjoyer', photo: '/tiles-ga931800d8_640.jpg' },
+    { title: 'photographer', photo: '/tiles-g095d99ed0_640.jpg' },
   ];
 
-  const setNewRole = () => {
-    const currentIndex = roles.indexOf(secondaryRole);
-    let newIndex = -1;
+  const [secondaryRole, setSecondaryRole] = useState(roles[0]);
 
+  const setNewRole = () => {
+    const currentIndex = roles.findIndex(
+      (role) => role.title === secondaryRole.title
+    );
+    let newIndex = -2;
     do {
       newIndex = Math.floor(Math.random() * roles.length);
     } while (currentIndex === newIndex);
@@ -25,7 +31,7 @@ const Header = () => {
         <h1 className='text-4xl font-bold sm:text-5xl'>Hi! I'm Jonathan.</h1>
         <div className='text-2xl sm:text-3xl'>I'm a full-stack developer</div>
         <div className='text-2xl sm:text-3xl'>
-          and <span>{secondaryRole}.</span>
+          and <span>{secondaryRole.title}.</span>
         </div>
         <button
           className='hidden rounded-full bg-blue-400 p-3 sm:block'
@@ -34,7 +40,14 @@ const Header = () => {
           What else am I?
         </button>
       </div>
-      <div className='h-48 w-48 bg-black'></div>
+      <div className='h-72 w-56 rotate-2 bg-neutral-100 pt-4 shadow-xl sm:h-96 sm:w-72'>
+        <img
+          src={secondaryRole.photo}
+          alt=''
+          className='mx-auto h-2/3 sm:h-3/4'
+        />
+      </div>
+
       <button
         className='block rounded-full bg-blue-400 p-3 sm:hidden'
         onClick={setNewRole}
