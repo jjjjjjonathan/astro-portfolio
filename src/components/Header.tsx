@@ -42,13 +42,20 @@ const Header = () => {
           What else am I?
         </button>
       </div>
-      <div className='h-72 w-56 rotate-2 bg-neutral-100 pt-4 shadow-xl sm:h-96 sm:w-72'>
-        <img
-          src={secondaryRole.photo}
-          alt=''
-          className='mx-auto h-2/3 sm:h-3/4'
-        />
-      </div>
+      <div className='flex flex-col justify-center shadow-xl'>
+        <div className='h-72 w-56 -rotate-6 bg-neutral-300 pt-4 shadow-xl sm:h-96 sm:w-72'>
+        </div>
+        <div className='h-72 w-56 rotate-12 bg-neutral-200 pt-4 shadow-xl sm:h-96 sm:w-72 sm:-mt-96 -mt-72'>
+        </div>
+        <div className='h-72 w-56 rotate-2 bg-neutral-100 pt-4 shadow-xl sm:h-96 sm:w-72 sm:-mt-96 -mt-72'>
+          <img
+            src={secondaryRole.photo}
+            alt=''
+            className='mx-auto h-2/3 sm:h-3/4'
+          />
+        </div>
+      </div >
+
 
       <button
         className='block rounded-full bg-blue-400 p-3 sm:hidden'
@@ -56,7 +63,7 @@ const Header = () => {
       >
         What else am I?
       </button>
-    </header>
+    </header >
   );
 };
 
