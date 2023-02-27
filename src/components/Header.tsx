@@ -15,14 +15,16 @@ const Header = () => {
   const [secondaryRole, setSecondaryRole] = useState(roles[0]);
 
   const setNewRole = () => {
-    const currentIndex = roles.findIndex(
-      (role) => role.title === secondaryRole.title
-    );
-    let newIndex = -2;
-    do {
-      newIndex = Math.floor(Math.random() * roles.length);
-    } while (currentIndex === newIndex);
-    setSecondaryRole(roles[newIndex]);
+    setSecondaryRole((prev) => {
+      const nextIndex =
+        roles.findIndex((role) => role.title === prev.title) + 1;
+
+      if (nextIndex >= roles.length) {
+        return roles[0];
+      } else {
+        return roles[nextIndex];
+      }
+    });
   };
 
   return (

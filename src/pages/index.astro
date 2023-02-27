@@ -7,7 +7,7 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
 ---
 
 <Layout title='jonathan cheng'>
-  <Header client:load />
+  <Header client:idle />
   <!-- <ul>
     {
       projects.map((project) => (
