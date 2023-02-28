@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header';
+import { Content as AboutContent } from '../components/About.mdx';
 
 import { getCollection } from 'astro:content';
 const projects = await getCollection('projects', ({ data }) => !data.draft);
@@ -8,6 +9,11 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
 
 <Layout title='jonathan cheng'>
   <Header client:idle />
+  <main class='prose prose-lg mx-auto w-full px-4 sm:prose-xl md:px-2'>
+    <h2>About</h2>
+    <AboutContent />
+  </main>
+
   <!-- <ul>
     {
       projects.map((project) => (

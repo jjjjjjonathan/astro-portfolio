@@ -1,0 +1,10 @@
+---
+export interface Props {
+  text: string;
+  twClasses: string;
+}
+
+const { text, twClasses } = Astro.props;
+---
+
+<span class={twClasses}>{text}</span>
