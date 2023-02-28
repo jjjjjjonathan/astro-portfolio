@@ -28,42 +28,34 @@ const Header = () => {
   };
 
   return (
-    <header className='flex h-screen w-full flex-col items-center justify-center gap-12 sm:flex-row sm:gap-24'>
-      <div className='flex flex-col items-center justify-center sm:items-start'>
+    <div className='flex min-h-screen w-full flex-col items-center justify-center gap-12 md:flex-row md:gap-24'>
+      <div className='flex flex-col items-center justify-center md:items-start'>
         <h1 className='text-4xl font-bold sm:text-5xl'>Hi! I'm Jonathan.</h1>
         <div className='text-2xl sm:text-3xl'>I'm a full-stack developer</div>
         <div className='text-2xl sm:text-3xl'>
           and <span>{secondaryRole.title}.</span>
         </div>
+      </div>
+      <div className='flex flex-col'>
+        <div className='flex flex-col justify-center shadow-xl'>
+          <div className='h-56 w-48 -rotate-6 bg-neutral-300 pt-4 shadow-xl md:h-96 md:w-72'></div>
+          <div className='-mt-56 h-56 w-48 rotate-12 bg-neutral-200 pt-4 shadow-xl md:-mt-96 md:h-96 md:w-72'></div>
+          <div className='-mt-56 h-56 w-48 rotate-2 bg-neutral-100 pt-4 shadow-xl md:-mt-96 md:h-96 md:w-72'>
+            <img
+              src={secondaryRole.photo}
+              alt=''
+              className='mx-auto h-2/3 sm:h-3/4'
+            />
+          </div>
+        </div>
         <button
-          className='hidden rounded-full bg-blue-400 p-3 sm:block'
+          className='mt-12 block rounded-full bg-emerald-400 p-3 shadow-xl'
           onClick={setNewRole}
         >
-          What else am I?
+          See what else I am!
         </button>
       </div>
-      <div className='flex flex-col justify-center shadow-xl'>
-        <div className='h-72 w-56 -rotate-6 bg-neutral-300 pt-4 shadow-xl sm:h-96 sm:w-72'>
-        </div>
-        <div className='h-72 w-56 rotate-12 bg-neutral-200 pt-4 shadow-xl sm:h-96 sm:w-72 sm:-mt-96 -mt-72'>
-        </div>
-        <div className='h-72 w-56 rotate-2 bg-neutral-100 pt-4 shadow-xl sm:h-96 sm:w-72 sm:-mt-96 -mt-72'>
-          <img
-            src={secondaryRole.photo}
-            alt=''
-            className='mx-auto h-2/3 sm:h-3/4'
-          />
-        </div>
-      </div >
-
-
-      <button
-        className='block rounded-full bg-blue-400 p-3 sm:hidden'
-        onClick={setNewRole}
-      >
-        What else am I?
-      </button>
-    </header >
+    </div>
   );
 };
 
