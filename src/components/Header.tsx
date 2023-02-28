@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { MdOutlineEmail } from 'react-icons/md';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 const Header = () => {
   const roles = [
@@ -29,11 +31,16 @@ const Header = () => {
 
   return (
     <div className='flex min-h-screen w-full flex-col items-center justify-center gap-12 md:flex-row md:gap-24'>
-      <div className='flex flex-col items-center justify-center md:items-start'>
+      <div className='flex flex-col items-center justify-center gap-1 md:items-start'>
         <h1 className='text-4xl font-bold sm:text-5xl'>Hi! I'm Jonathan.</h1>
         <div className='text-2xl sm:text-3xl'>I'm a full-stack developer</div>
         <div className='text-2xl sm:text-3xl'>
           and <span>{secondaryRole.title}.</span>
+        </div>
+        <div className='mt-2 flex w-full flex-row items-center justify-around'>
+          <MdOutlineEmail title='email' className='text-4xl' />
+          <SiGithub className='text-4xl' title='GitHub' />
+          <SiLinkedin className='text-4xl' title='LinkedIn' />
         </div>
       </div>
       <div className='flex flex-col'>
