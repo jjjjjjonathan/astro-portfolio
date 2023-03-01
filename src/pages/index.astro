@@ -40,7 +40,7 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
       <h2>Skills</h2>
       <h3>My tech stack includes</h3>
       <div
-        class='mx-auto grid w-full grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid w-full grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
       >
         <TypeScriptIcon />
         <ReactIcon />
@@ -51,7 +51,7 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
       </div>
       <h3>But I've also used</h3>
       <div
-        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
       >
         <!-- Python -->
         <JavaScriptIcon />
@@ -63,7 +63,7 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
       </div>
       <h3>I'm also good with these</h3>
       <div
-        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
       >
         <GitIcon />
         <CircleCiIcon />
@@ -74,7 +74,7 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
       </div>
       <h3>And I'm currently learning</h3>
       <div
-        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
       >
         <TrpcIcon />
         <DockerIcon />
