@@ -2,17 +2,86 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header';
 import { Content as AboutContent } from '../components/About.mdx';
+import TypeScriptIcon from '../components/icons/TypeScriptIcon.astro';
+import ReactIcon from '../components/icons/ReactIcon.astro';
+import TailwindIcon from '../components/icons/TailwindIcon.astro';
+import NodeIcon from '../components/icons/NodeIcon.astro';
+import ExpressIcon from '../components/icons/ExpressIcon.astro';
+import PostgresIcon from '../components/icons/PostgresIcon.astro';
+import PythonIcon from '../components/icons/PythonIcon.astro';
+import RubyIcon from '../components/icons/RubyIcon.astro';
+import RailsIcon from '../components/icons/RailsIcon.astro';
+import VueIcon from '../components/icons/VueIcon.astro';
+import AstroIcon from '../components/icons/AstroIcon.astro';
+import WebSocketsIcon from '../components/icons/WebSocketsIcon.astro';
+import JavaScriptIcon from '../components/icons/JavaScriptIcon.astro';
+import GitIcon from '../components/icons/GitIcon.astro';
+import CircleCiIcon from '../components/icons/CircleCiIcon.astro';
+import CommandLineIcon from '../components/icons/CommandLineIcon.astro';
+import RestApiIcon from '../components/icons/RestApiIcon.astro';
+import ResponsiveDesignIcon from '../components/icons/ResponsiveDesignIcon.astro';
+import TrpcIcon from '../components/icons/TrpcIcon.astro';
+import DockerIcon from '../components/icons/DockerIcon.astro';
+import AwsIcon from '../components/icons/AwsIcon.astro';
 
 import { getCollection } from 'astro:content';
+
 const projects = await getCollection('projects', ({ data }) => !data.draft);
 ---
 
 <Layout title='jonathan cheng'>
   <Header client:idle />
-  <main class='prose prose-lg mx-auto w-full px-4 sm:prose-xl md:px-2'>
-    <h2>About</h2>
-    <AboutContent />
-  </main>
+  <div class='prose prose-lg mx-auto w-full px-4 sm:prose-xl md:px-2'>
+    <main>
+      <h2>About Me</h2>
+      <AboutContent />
+    </main>
+    <section>
+      <h2>Skills</h2>
+      <h3>My tech stack includes</h3>
+      <div
+        class='mx-auto grid w-full grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+      >
+        <TypeScriptIcon />
+        <ReactIcon />
+        <TailwindIcon />
+        <NodeIcon />
+        <ExpressIcon />
+        <PostgresIcon />
+      </div>
+      <h3>But I've also used</h3>
+      <div
+        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+      >
+        <!-- Python -->
+        <JavaScriptIcon />
+        <PythonIcon />
+        <RubyIcon />
+        <RailsIcon />
+        <VueIcon />
+        <AstroIcon />
+      </div>
+      <h3>I'm also good with these</h3>
+      <div
+        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+      >
+        <GitIcon />
+        <CircleCiIcon />
+        <CommandLineIcon />
+        <WebSocketsIcon />
+        <RestApiIcon />
+        <ResponsiveDesignIcon />
+      </div>
+      <h3>And I'm currently learning</h3>
+      <div
+        class='grid grid-cols-3 items-center justify-items-center gap-y-8 md:grid-cols-6'
+      >
+        <TrpcIcon />
+        <DockerIcon />
+        <AwsIcon />
+      </div>
+    </section>
+  </div>
 
   <!-- <ul>
     {
