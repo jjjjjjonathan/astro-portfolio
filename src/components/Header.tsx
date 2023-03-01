@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { MdOutlineEmail } from 'react-icons/md';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 const Header = () => {
   const roles = [
