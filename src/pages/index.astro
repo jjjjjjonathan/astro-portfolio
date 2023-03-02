@@ -23,10 +23,16 @@ import ResponsiveDesignIcon from '../components/icons/ResponsiveDesignIcon.astro
 import TrpcIcon from '../components/icons/TrpcIcon.astro';
 import DockerIcon from '../components/icons/DockerIcon.astro';
 import AwsIcon from '../components/icons/AwsIcon.astro';
+import Project from '../components/Project.astro';
 
 import { getCollection } from 'astro:content';
 
-const projects = await getCollection('projects', ({ data }) => !data.draft);
+const projectEntries = await getCollection(
+  'projects',
+  ({ data }) => !data.draft
+);
+
+const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
 ---
 
 <Layout title='jonathan cheng'>
@@ -53,7 +59,6 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
       <div
         class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
       >
-        <!-- Python -->
         <JavaScriptIcon />
         <PythonIcon />
         <RubyIcon />
@@ -81,15 +86,11 @@ const projects = await getCollection('projects', ({ data }) => !data.draft);
         <AwsIcon />
       </div>
     </section>
+    <section>
+      <h2>Projects I've worked on</h2>
+      <div class='not-prose divide-y divide-dashed divide-blue-800'>
+        {projects.map((project) => <Project project={project} />)}
+      </div>
+    </section>
   </div>
-
-  <!-- <ul>
-    {
-      projects.map((project) => (
-        <li>
-          <a href={`/projects/${project.slug}`}>{project.data.title}</a>
-        </li>
-      ))
-    }
-  </ul> -->
 </Layout>
