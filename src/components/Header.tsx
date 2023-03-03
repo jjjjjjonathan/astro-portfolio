@@ -37,9 +37,6 @@ const Header = () => {
             and <span>{secondaryRole.title}.</span>
           </div>
           <div className='mt-2 flex w-full flex-row items-center justify-around'>
-            {/* <MdOutlineEmail title='email' className='text-4xl' />
-          <SiGithub className='text-4xl' title='GitHub' />
-          <SiLinkedin className='text-4xl' title='LinkedIn' /> */}
           </div>
         </div>
         <div className='flex flex-col' onClick={setNewRole}>
@@ -54,12 +51,6 @@ const Header = () => {
               />
             </div>
           </div>
-          {/* <button
-          className='mt-12 block rounded-full bg-emerald-400 p-3 shadow-xl'
-          onClick={setNewRole}
-        >
-          See what else I am!
-        </button> */}
         </div>
       </div>
       <svg

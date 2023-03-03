@@ -37,7 +37,7 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
 
 <Layout title='jonathan cheng'>
   <Header client:idle />
-  <div class='prose prose-lg mx-auto w-full px-4 sm:prose-xl md:px-2'>
+  <div class='prose prose-lg mx-auto w-full max-w-5xl px-4 sm:prose-xl md:px-6'>
     <main>
       <h2>About Me</h2>
       <AboutContent />
@@ -46,7 +46,7 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
       <h2>Skills</h2>
       <h3>My tech stack includes</h3>
       <div
-        class='grid w-full grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid w-full grid-cols-3 items-start justify-items-center gap-y-8 text-center md:grid-cols-6'
       >
         <TypeScriptIcon />
         <ReactIcon />
@@ -57,7 +57,7 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
       </div>
       <h3>But I've also used</h3>
       <div
-        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 text-center md:grid-cols-6'
       >
         <JavaScriptIcon />
         <PythonIcon />
@@ -68,7 +68,7 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
       </div>
       <h3>I'm also good with these</h3>
       <div
-        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 text-center md:grid-cols-6'
       >
         <GitIcon />
         <CircleCiIcon />
@@ -79,7 +79,7 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
       </div>
       <h3>And I'm currently learning</h3>
       <div
-        class='grid grid-cols-3 items-start justify-items-center gap-y-8 md:grid-cols-6'
+        class='grid grid-cols-3 items-start justify-items-center gap-y-8 text-center md:grid-cols-6'
       >
         <TrpcIcon />
         <DockerIcon />
