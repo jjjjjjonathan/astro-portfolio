@@ -36,8 +36,7 @@ const Header = () => {
           <div className='text-2xl sm:text-3xl'>
             and <span>{secondaryRole.title}.</span>
           </div>
-          <div className='mt-2 flex w-full flex-row items-center justify-around'>
-          </div>
+          <div className='mt-2 flex w-full flex-row items-center justify-around'></div>
         </div>
         <div className='flex flex-col' onClick={setNewRole}>
           <div className='flex flex-col justify-center shadow-xl'>
