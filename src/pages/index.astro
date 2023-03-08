@@ -36,7 +36,10 @@ const projects = projectEntries.sort((a, b) => a.data.rank - b.data.rank);
 ---
 
 <Layout title='jonathan cheng'>
-  <Header client:idle />
+  <div class='header-container'>
+    <Header client:idle />
+  </div>
+
   <div class='prose-lg prose mx-auto w-full max-w-5xl px-4 sm:prose-xl md:px-6'>
     <main>
       <h2>About Me</h2>
